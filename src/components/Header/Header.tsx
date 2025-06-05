@@ -14,7 +14,6 @@ const {
   Nav,
   NavButton,
   ToggleContainer,
-  BurgerButton,
 } = HeaderStyled;
 
 export const Header: React.FC<HeaderProps> = ({ toggleTheme, isDark }) => {

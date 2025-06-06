@@ -1,16 +1,28 @@
 /** @jsxImportSource @emotion/react */
 
 import { motion } from "framer-motion";
-import { Button, Input, Form, message } from "antd";
+import { Button, Input,message } from "antd";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { ContactSectionStyled } from "./ContactSection.styled";
 
-const { Container, Title, StyledForm, Socials } = ContactSectionStyled;
+const { Container, Title, StyledForm, Socials,StyledItem,InputStyled } = ContactSectionStyled;
 
 const ContactSection = () => {
-  const onFinish = () => {
-    message.success("Mensaje enviado (simulado)");
-  };
+ 
+
+const onFinish = (values: unknown) => {
+  const { name, email, message: userMessage } = values as { name: string; email: string; message: string };
+
+  const whatsappNumber = "51982279718";
+  const text = `Hola, soy ${name}.\nMi correo es: ${email}.\nMensaje: ${userMessage}`;
+
+  const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
+  message.success("Mensaje enviado (simulado)");
+
+  window.open(url, "_blank");
+};
+
 
   return (
     <Container id="contact">
@@ -21,46 +33,45 @@ const ContactSection = () => {
       >
         <Title>Contáctame</Title>
         <StyledForm layout="vertical" onFinish={onFinish}>
-          <Form.Item name="name" label="Nombre" rules={[{ required: true }]}>
-            <Input />
-          </Form.Item>
-          <Form.Item
+          <StyledItem name="name" label="Nombre" rules={[{ required: true,message:"Nombre es requerido"}]}>
+            <InputStyled />
+          </StyledItem>
+          <StyledItem
             name="email"
             label="Correo"
-            rules={[{ required: true, type: "email" }]}
+            rules={[{ required: true, type: "email",message:"Correo no válido"}]}
           >
-            <Input />
-          </Form.Item>
-          <Form.Item
+            <InputStyled />
+          </StyledItem>
+          <StyledItem
             name="message"
             label="Mensaje"
-            rules={[{ required: true }]}
+            rules={[{ required: true,message:"Mensaje es requerido"}]}
           >
             <Input.TextArea rows={4} />
-          </Form.Item>
-          <Form.Item>
+          </StyledItem>
+          <StyledItem>
             <Button type="primary" htmlType="submit">
               Enviar
             </Button>
-          </Form.Item>
+          </StyledItem>
         </StyledForm>
 
         <Socials>
           <a
-            href="https://github.com/tuusuario"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/tuusuario"
+            href="https://www.linkedin.com/in/carlos-ju%C3%A1rez-xyz/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedin />
           </a>
-          <a href="mailto:tuemail@correo.com">
+          <a href="mailto:carlostuna015@gmail.com">
             <FaEnvelope />
           </a>
         </Socials>

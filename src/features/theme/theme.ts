@@ -3,10 +3,12 @@ export const darkTheme = {
   text: "#fff",
   accent: "#fff",
   hover: "#89CFF0",
-  buttonBackground:"rgba(15, 131, 199,0.8)",
-  buttonBackgroundHover:"rgb(15, 131, 199)",
-  particules:"#ffffff",
-  card:"rgba(33, 60, 87, 0.8)"
+  buttonBackground: "rgba(15, 131, 199,0.8)",
+  buttonBackgroundHover: "rgb(15, 131, 199)",
+  particules: "#ffffff",
+  card: "rgba(33, 60, 87, 0.8)",
+  border: "#00d8ff",
+  error: "rgb(199, 15, 15)",
 };
 
 export const darkThemeB = {
@@ -14,10 +16,12 @@ export const darkThemeB = {
   text: "#fff",
   accent: "#fff",
   hover: "#fff",
-  buttonBackground:"rgba(15, 131, 199,0.8)",
-  buttonBackgroundHover:"rgb(15, 131, 199)",
-  particules:"#ffffff",
-  card:"rgba(33, 151, 219, 0.7)"
+  buttonBackground: "rgba(15, 131, 199,0.8)",
+  buttonBackgroundHover: "rgb(15, 131, 199)",
+  particules: "#ffffff",
+  card: "rgba(33, 151, 219, 0.7)",
+  border: "#00d8ff",
+  error: "rgb(199, 15, 15)",
 };
 
 export type ThemeType = typeof darkTheme;

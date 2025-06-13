@@ -37,11 +37,10 @@ export const Header: React.FC<HeaderProps> = ({ toggleTheme, isDark }) => {
         <NavButton type="text" onClick={() => scrollToSection("skills")}>
           Habilidades
         </NavButton>
-        <NavButton type="text" onClick={() => scrollToSection("about")}>
-          Acerca
+        <NavButton type="text" onClick={() => scrollToSection("experience")}>
+          Experiencia
         </NavButton>
       </Nav>
-
       <ToggleContainer>
         <span>{isDark ? "Oscuro" : "Claro"}</span>
         <Switch checked={isDark} onChange={toggleTheme} />

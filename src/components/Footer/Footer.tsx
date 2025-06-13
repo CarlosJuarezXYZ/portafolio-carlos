@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
       toast.success("¡Gracias por tu like! No dudes en contactarme.", {
         autoClose: 1500,
         transition: Slide,
-        position: "top-center",
+        position: "bottom-center",
         hideProgressBar: true,
         closeOnClick: true,
         theme: "dark",
@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
       toast.info("¡Me rompes el corazón!", {
         autoClose: 1500,
         transition: Slide,
-        position: "top-center",
+        position: "bottom-center",
         hideProgressBar: true,
         closeOnClick: true,
         theme: "dark",
@@ -51,12 +51,12 @@ export const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <ButtonLike onClick={handleLikeToggle} liked={liked}>
-        <HeartIcon liked={liked} />
+        <HeartIcon  liked={liked} />
         {liked ? "Me gusta" : "Like"}
       </ButtonLike>
 
       <CopyrightText>
-        © {new Date().getFullYear()} Carlos - Todos los derechos reservados
+        © {new Date().getFullYear()} Carlos Juarez - Todos los derechos reservados
       </CopyrightText>
 
       <ToastContainer
@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
         draggable={false}
         closeButton={false}
         toastStyle={{
-          backgroundColor: theme.background,
+          backgroundColor: "rgba(17, 156, 236, 0.5)",
           color: theme.text,
           fontWeight: "bold",
           fontSize: "1rem",

@@ -1,4 +1,3 @@
-// Header.styled.ts
 import styled from "@emotion/styled";
 import { Button } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
@@ -15,25 +14,15 @@ const HeaderContainer = styled.header`
   padding: 1rem 2rem;
   z-index: 1000;
   box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
-
   @media (max-width: 768px) {
-    // flex-direction: column;
-    // align-items: flex-start;
     padding: 10px;
-    
   }
 `;
 
 const Nav = styled.nav<{ isOpen?: boolean }>`
   display: flex;
   gap: 1rem;
-  // border:1px solid green;
-  @media (max-width: 768px) {
-    gap: 0.5rem;
-    display: ${({ isOpen }) => (isOpen ? "flex" : "flex")};
-    flex-wrap: wrap;
-    
-  }
+  flex-wrap: wrap;
 `;
 
 const NavButton = styled(Button)`

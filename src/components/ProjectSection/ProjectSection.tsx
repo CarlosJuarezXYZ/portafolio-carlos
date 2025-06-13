@@ -1,5 +1,5 @@
 import React from "react";
-import { Fade } from "react-awesome-reveal";
+import { motion } from "framer-motion";
 import { ProjectSectionStyled } from "./ProjectSection.styled";
 import { PROJECTS } from "./project";
 
@@ -14,24 +14,40 @@ const {
   Description,
 } = ProjectSectionStyled;
 
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+const MotionGrid = motion(Grid);
+
 export const ProjectSection: React.FC = () => {
-  return (
+return (
     <Section id="projects">
-      <Fade triggerOnce>
-        <Title>Proyectos Destacados</Title>
-      </Fade>
-      <Grid>
+      <Title>Proyectos Destacados</Title>
+
+      <MotionGrid
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.2 }}
+      >
         {PROJECTS.map((project) => (
           <Card
             key={project.id}
+            variants={cardVariants}
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ scale: 1.02 }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            viewport={{ once: true }}
           >
             <Image src={project.image} alt={project.title} />
             <Content>
@@ -40,7 +56,7 @@ export const ProjectSection: React.FC = () => {
             </Content>
           </Card>
         ))}
-      </Grid>
+      </MotionGrid>
     </Section>
   );
 };

@@ -10,6 +10,11 @@ const FooterContainer = styled.footer`
   color: ${({ theme }) => theme.text};
   font-size: 0.9rem;
   position: relative;
+  @media (max-width: 510px) {
+  padding: 1rem;
+  gap: 10px;
+  flex-direction: column;
+  }
 `;
 
 const ButtonLike = styled.button<{ liked: boolean }>`
@@ -22,7 +27,7 @@ const ButtonLike = styled.button<{ liked: boolean }>`
   align-items: center;
   gap: 0.5rem;
   background-color: ${({ liked, theme }) =>
-    liked ? theme.primary : theme.surface};
+    liked ? "rgba(17, 156, 236, 0.8)" : "rgba(26, 163, 243, 0.8)"};
   color: ${({ liked, theme }) => (liked ? "#fff" : theme.textSecondary)};
   transition: all 0.3s ease;
 
@@ -30,11 +35,17 @@ const ButtonLike = styled.button<{ liked: boolean }>`
     background-color: ${({ liked, theme }) =>
       liked ? theme.primaryLight : theme.surface};
   }
+    @media (max-width: 600px) {
+   font-size: 18px;
+  }
 `;
 
 const CopyrightText = styled.div`
   font-size: 0.85rem;
   color: ${({ theme }) => theme.textSecondary};
+   @media (max-width: 600px) {
+  text-align: center
+  }
 `;
 
 const pulse = keyframes`

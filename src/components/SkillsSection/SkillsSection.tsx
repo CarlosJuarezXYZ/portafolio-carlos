@@ -11,7 +11,6 @@ const SkillsSection: React.FC = () => {
       <Fade triggerOnce>
         <Title>Habilidades</Title>
       </Fade>
-
       <GridContainer>
         <div>
           <CategoryTitle>Frontend</CategoryTitle>
@@ -21,8 +20,8 @@ const SkillsSection: React.FC = () => {
                 key={skill.name}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.05 }}
+                viewport={{ once: false }}
               >
                 {skill.icon}
                 <SkillLabel>{skill.name}</SkillLabel>
@@ -39,8 +38,9 @@ const SkillsSection: React.FC = () => {
                 key={skill.name}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                viewport={{ once: true }}
+                transition={{ duration: 0.9, delay: i * 0.05 }}
+                viewport={{ once: false }}
+                
               >
                 {skill.icon}
                 <SkillLabel>{skill.name}</SkillLabel>
@@ -57,8 +57,8 @@ const SkillsSection: React.FC = () => {
                 key={skill.name}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                viewport={{ once: true }}
+                transition={{ duration: 1, delay: i * 0.05 }}
+                viewport={{ once: false }}
               >
                 {skill.icon}
                 <SkillLabel>{skill.name}</SkillLabel>

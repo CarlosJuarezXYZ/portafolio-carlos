@@ -9,9 +9,6 @@ const Section = styled.section`
   justify-content: center;
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
-    @media (max-width: 500px) {
-    margin-top:30px;
-  }
 `;
 
 const Container = styled.div`
@@ -29,6 +26,7 @@ const Avatar = styled(motion.img)`
   border-radius: 100%;
   object-fit: cover;
   border: 3px solid ${({ theme }) => theme.background};
+  margin-top: 1.5rem;
   @media (max-width: 440px) {
     width: 230px;
     height: 230px;
@@ -39,7 +37,6 @@ const Name = styled(motion.h1)`
   font-size: 3rem;
   font-weight: 900;
   margin: 0;
-
   @media (max-width: 768px) {
     font-size: 2.2rem;
   }

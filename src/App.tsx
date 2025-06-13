@@ -8,12 +8,8 @@ import { ProjectSection } from "./components/ProjectSection/ProjectSection";
 import ContactSection from "./components/ContactSection/ContactSection";
 import { Footer } from "./components/Footer/Footer";
 import ParticlesBackground from "./components/ParticulesBackground/ParticlesBackground";
-// import { ExperienceTimeline } from "./components/Experience/Experience";
 import SkillsSection from "./components/SkillsSection/SkillsSection";
 import { Experience } from "./components/Experience/Experience";
-// import { ExperienceCards } from "./components/Experience2/Experience2";
-// import ExperienceAccordion from "./components/Experience/Experience";
-// import { ExperienceCards } from "./components/Experience/Experience";
 
 const App: React.FC = () => {
   const [isDark, setIsDark] = useState(true);
@@ -29,9 +25,6 @@ const App: React.FC = () => {
         <HeroSection />
         <ProjectSection />
         <SkillsSection />
-        {/* <ExperienceTimeline/> */}
-        {/* <ExperienceCards/> */}
-        {/* <ExperienceAccordion/> */}
         <Experience />
         <ContactSection />
         <Footer />

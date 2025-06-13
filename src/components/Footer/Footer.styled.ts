@@ -26,7 +26,7 @@ const ButtonLike = styled.button<{ liked: boolean }>`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: ${({ liked, theme }) =>
+  background-color: ${({ liked }) =>
     liked ? "rgba(17, 156, 236, 0.8)" : "rgba(26, 163, 243, 0.8)"};
   color: ${({ liked, theme }) => (liked ? "#fff" : theme.textSecondary)};
   transition: all 0.3s ease;
